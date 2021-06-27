@@ -77,7 +77,7 @@ func (s *set) replace(tag, address uint32) {
 	if err != nil || n < len(val[1:]) {
 		if err == io.EOF {
 			// write it at the end
-			copy(val[n:], []byte("EOF")) // consider EOF
+			copy(val[n+1:], []byte("EOF")) // consider EOF
 		} else {
 			log.Fatalf("Read from file failed: %s, %b", err, n)
 		}
