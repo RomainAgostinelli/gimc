@@ -76,7 +76,8 @@ func (s *set) replace(tag, address uint32) {
 	n, err := s.cache.source.ReadAt(val[1:], int64(address))
 	if err != nil || n < len(val[1:]) {
 		if err == io.EOF {
-			copy(val[1:], "EOF") // consider EOF
+			// write it at the end
+			copy(val[n:], []byte("EOF")) // consider EOF
 		} else {
 			log.Fatalf("Read from file failed: %s, %b", err, n)
 		}
