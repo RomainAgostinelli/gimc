@@ -6,11 +6,12 @@ import (
 	"math"
 )
 
+// RePol is the type defining Replacement Policies for the cache
 type RePol int
 
 const (
-	FIFO RePol = iota
-	LRU
+	FIFO RePol = iota // FIFO = First In First Out
+	LRU               // LRU  = Least Recently Used
 )
 
 type Datasource interface {
@@ -31,6 +32,7 @@ type Cache struct {
 	repol                 RePol
 }
 
+// CreateCache create a new cache regarding the options given
 func CreateCache(sets, blockSize, dataSize, ways uint16, source Datasource, pol RePol) (*Cache, error) {
 	// Simple verification for the parameters
 	if dataSize > blockSize || dataSize == 0 || blockSize%dataSize != 0 {
@@ -50,8 +52,8 @@ func CreateCache(sets, blockSize, dataSize, ways uint16, source Datasource, pol 
 
 	c := &Cache{
 		sets:       make([]*set, sets),
-		indexMask:  calculateMask(indexSize),
-		offsetMask: calculateMask(offsetSize),
+		indexMask:  CalculateMask(indexSize),
+		offsetMask: CalculateMask(offsetSize),
 		offsetSize: offsetSize,
 		tagSize:    tagSize,
 		source:     source,
@@ -77,11 +79,13 @@ func (c *Cache) Get(address uint32) []byte {
 	return c.sets[index].get(address)
 }
 
+// ResetCounters resets the hits and misses counters
 func (c *Cache) ResetCounters() {
 	c.hitCount = 0
 	c.missCount = 0
 }
 
+// Close closes the cache and the datasource
 func (c *Cache) Close() error {
 	err := c.source.Close()
 	if err != nil {
@@ -90,11 +94,13 @@ func (c *Cache) Close() error {
 	return nil
 }
 
+// GetCounters gives counter of hits and misses of the cache
 func (c *Cache) GetCounters() (hits, misses uint64) {
 	return c.hitCount, c.missCount
 }
 
-func calculateMask(size uint8) uint32 {
+// CalculateMask generates a mask (1 at the LSB)
+func CalculateMask(size uint8) uint32 {
 	res := uint32(0b0)
 	for i := uint8(0); i < size; i++ {
 		if res > 0 {
