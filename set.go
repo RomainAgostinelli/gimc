@@ -71,8 +71,8 @@ func (s *set) replace(tag, address uint32) {
 		delete(s.ways, toReplace) // delete entry
 	}
 	// create new tags and data
-	val := make([]byte, s.cache.blockSize+1) // one for tag
-	val[0] = 0b0000_0000                     // tag
+	val := make([]byte, s.cache.blockSize+1) // one for edition bits
+	val[0] = 0b0000_0000                     // edition bits TODO: implement it
 	n, err := s.cache.source.ReadAt(val[1:], int64(address))
 	if err != nil || n < len(val[1:]) {
 		if err == io.EOF {
