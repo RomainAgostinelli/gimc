@@ -2,6 +2,7 @@ package gimc
 
 import (
 	"github.com/RomainAgostinelli/gimc/pkg/heap"
+	"io"
 	"log"
 )
 
@@ -74,7 +75,11 @@ func (s *set) replace(tag, address uint32) {
 	val[0] = 0b0000_0000                     // tag
 	n, err := s.cache.source.ReadAt(val[1:], int64(address))
 	if err != nil || n < len(val[1:]) {
-		log.Fatalf("Read from file failed: %s, %b", err, n)
+		if err == io.EOF {
+			copy(val[1:], "EOF") // consider EOF
+		} else {
+			log.Fatalf("Read from file failed: %s, %b", err, n)
+		}
 	}
 	// put ourself into the way
 	s.ways[tag] = val
