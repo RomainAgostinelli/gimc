@@ -1,0 +1,4 @@
+github.com/ag0st/binarytree v0.0.0-20220412222724-22db34257cac h1:AZD1nbMWFp7WUC4a1m5N0mnLlApz0RjZ+yP+AzT/d8w=
+github.com/ag0st/binarytree v0.0.0-20220412222724-22db34257cac/go.mod h1:VQkotJ8UMMtNaBUfXOxPFCO0Gz/8QA60HG3twx+HQ/M=
+github.com/ag0st/bst v0.0.0-20220412222951-523e62820e13 h1:UYHJGoGMzVJl8O8ZeeD7J4acblVcpblXa8Gf/D8hXg8=
+github.com/ag0st/bst v0.0.0-20220412222951-523e62820e13/go.mod h1:mOlNriCkfHK0ApFvqD123yWFmQ4VwG3aWCCwWUhBzmo=
