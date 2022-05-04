@@ -5,3 +5,7 @@ github.com/RomainAgostinelli/bst v0.0.0-20210621124243-a56f9c872b5c h1:/xcqHNjJJ
 github.com/RomainAgostinelli/bst v0.0.0-20210621124243-a56f9c872b5c/go.mod h1:o8KB37aEcFHKcCoscQBP50KdL7lyjJsuCxK8Mg90nUU=
 github.com/RomainAgostinelli/bst v0.0.0-20210621141309-8fa4aeaa7f64 h1:e+9s6LRd2/k12u2ccAQ9sn/42kyfmeIcXJVnpQAjUO8=
 github.com/RomainAgostinelli/bst v0.0.0-20210621141309-8fa4aeaa7f64/go.mod h1:FIByhtqUFFynxAylwD+e3tvXIHTvcdRsGTGVb/fLcYI=
+github.com/ag0st/binarytree v0.0.0-20220412222724-22db34257cac h1:AZD1nbMWFp7WUC4a1m5N0mnLlApz0RjZ+yP+AzT/d8w=
+github.com/ag0st/binarytree v0.0.0-20220412222724-22db34257cac/go.mod h1:VQkotJ8UMMtNaBUfXOxPFCO0Gz/8QA60HG3twx+HQ/M=
+github.com/ag0st/bst v0.0.0-20220412222951-523e62820e13 h1:UYHJGoGMzVJl8O8ZeeD7J4acblVcpblXa8Gf/D8hXg8=
+github.com/ag0st/bst v0.0.0-20220412222951-523e62820e13/go.mod h1:mOlNriCkfHK0ApFvqD123yWFmQ4VwG3aWCCwWUhBzmo=

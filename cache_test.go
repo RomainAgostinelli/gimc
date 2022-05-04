@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"crypto/sha256"
 	"fmt"
-	"github.com/RomainAgostinelli/bst"
+	"github.com/ag0st/bst"
 	"log"
 	"math/rand"
 	"os"

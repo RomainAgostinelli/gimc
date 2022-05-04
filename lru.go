@@ -1,7 +1,7 @@
 package gimc
 
 import (
-	"github.com/RomainAgostinelli/gimc/pkg/heap"
+	"github.com/ag0st/gimc/pkg/heap"
 	"log"
 	"math"
 )

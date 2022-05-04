@@ -1,7 +1,7 @@
 package gimc
 
 import (
-	"github.com/RomainAgostinelli/gimc/pkg/heap"
+	"github.com/ag0st/gimc/pkg/heap"
 	"io"
 	"log"
 )
@@ -77,7 +77,7 @@ func (s *set) replace(tag, address uint32) {
 	if err != nil || n < len(val[1:]) {
 		if err == io.EOF {
 			// write it at the end
-			copy(val[n+1:], []byte("EOF")) // consider EOF
+			copy(val[n+1:], "EOF") // consider EOF
 		} else {
 			log.Fatalf("Read from file failed: %s, %b", err, n)
 		}
